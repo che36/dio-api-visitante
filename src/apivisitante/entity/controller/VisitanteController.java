@@ -1,6 +1,7 @@
 package apivisitante.entity.controller;
 
 import apivisitante.entity.Visitante;
+import apivisitante.entity.service.VisitanteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,10 @@ import java.util.List;
 
 public class VisitanteController {
     private final VisitanteService service;
+
+    public VisitanteController(VisitanteService service) {
+        this.service = service;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
