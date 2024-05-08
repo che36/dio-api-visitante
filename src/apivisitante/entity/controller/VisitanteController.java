@@ -1,6 +1,7 @@
 package apivisitante.entity.controller;
 
 import apivisitante.entity.Visitante;
+import apivisitante.entity.dto.VisitanteRequestDto;
 import apivisitante.entity.service.VisitanteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class VisitanteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Visitante criar(@RequestBody VisitanteRequestDTO dto) {
+    public Visitante criar(@RequestBody VisitanteRequestDto dto) {
         return service.criar(dto);
     }
 
